@@ -1,0 +1,59 @@
+﻿@model SistemaTutorInteligente.Models.datos_personales
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>datos_personales</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="id_datos" />
+            <div class="form-group">
+                <label asp-for="nombre" class="control-label"></label>
+                <input asp-for="nombre" class="form-control" />
+                <span asp-validation-for="nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="a_paterno" class="control-label"></label>
+                <input asp-for="a_paterno" class="form-control" />
+                <span asp-validation-for="a_paterno" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="a_materno" class="control-label"></label>
+                <input asp-for="a_materno" class="form-control" />
+                <span asp-validation-for="a_materno" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="edad" class="control-label"></label>
+                <input asp-for="edad" class="form-control" />
+                <span asp-validation-for="edad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="id_tipo" class="control-label"></label>
+                <select asp-for="id_tipo" class="form-control" asp-items="ViewBag.id_tipo"></select>
+                <span asp-validation-for="id_tipo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="id_usuario" class="control-label"></label>
+                <select asp-for="id_usuario" class="form-control" asp-items="ViewBag.id_usuario"></select>
+                <span asp-validation-for="id_usuario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
